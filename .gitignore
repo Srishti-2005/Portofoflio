@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.tmp
+.vercel
+__pycache__/
+*.pyc

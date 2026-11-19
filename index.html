@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Srishti Sangayya Malimath | AI & ML Engineer & Agentic Systems Developer</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="Portfolio of Srishti Sangayya Malimath — AI & ML Engineering undergraduate at CMRIT (8.76 CGPA). Specializing in AI Agents, Model Context Protocol (MCP), LLM Tool-Calling, and Backend Systems.">
+  <meta name="keywords" content="Srishti Sangayya Malimath, AI Engineer, Machine Learning, MCP, Model Context Protocol, AI Agents, Python, Bengaluru, CMRIT">
+  <meta name="author" content="Srishti Sangayya Malimath">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: ['class', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cyan: '#06b6d4',
+              purple: '#8b5cf6',
+              indigo: '#6366f1',
+              emerald: '#10b981'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="relative selection:bg-indigo-500 selection:text-white">
+
+  <!-- Scroll Progress Indicator Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Ambient Dynamic Glowing Orbs -->
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+  <div class="ambient-glow ambient-glow-3"></div>
+
+  <!-- ==========================================================================
+       Navigation Bar
+       ========================================================================== -->
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        
+        <!-- Logo / Brand -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 via-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold font-display shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform duration-200">
+            SM
+          </div>
+          <div>
+            <span class="font-display font-bold text-base sm:text-lg tracking-tight group-hover:text-cyan-400 transition-colors">
+              Srishti Malimath
+            </span>
+            <span class="block text-[11px] font-mono text-slate-400 tracking-wider">AI & ML Engineer</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#about" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">About</a>
+          <a href="#ai-terminal" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            AI Console
+          </a>
+          <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Skills</a>
+          <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Projects</a>
+          <a href="#patents-achievements" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Achievements</a>
+          <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-cyan-400 transition-colors">Contact</a>
+        </div>
+
+        <!-- Quick Action Controls -->
+        <div class="flex items-center gap-3">
+          <!-- Resume Button -->
+          <button onclick="openResumeModal()" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-indigo-600/20 hover:bg-indigo-600/30 border border-indigo-500/40 text-indigo-300 hover:text-white text-xs font-semibold tracking-wide transition-all shadow-sm cursor-pointer">
+            <i class="fas fa-file-lines text-cyan-400"></i>
+            <span>Resume</span>
+          </button>
+
+          <!-- Theme Switcher -->
+          <button id="theme-toggle" aria-label="Toggle Color Theme" class="w-9 h-9 rounded-xl bg-slate-800/60 hover:bg-slate-700/60 border border-slate-700/60 flex items-center justify-center transition-all cursor-pointer">
+            <i id="theme-icon" class="fas fa-sun text-yellow-400 text-sm"></i>
+          </button>
+
+          <!-- Mobile Menu Hamburger Button -->
+          <button id="mobile-menu-btn" aria-label="Open Navigation Menu" class="md:hidden w-9 h-9 rounded-xl bg-slate-800/60 border border-slate-700/60 flex items-center justify-center text-slate-300 hover:text-white cursor-pointer">
+            <i class="fas fa-bars text-base"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden px-4 pt-2 pb-6 border-t border-slate-800 bg-slate-950/95 backdrop-blur-xl">
+      <div class="flex flex-col space-y-3 pt-2">
+        <a href="#about" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5">About</a>
+        <a href="#ai-terminal" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-cyan-400"></span> AI Console Demo
+        </a>
+        <a href="#skills" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5">Technical Skills</a>
+        <a href="#projects" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5">Featured Projects</a>
+        <a href="#patents-achievements" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5">Patents & Milestones</a>
+        <a href="#contact" class="mobile-nav-link text-sm font-medium text-slate-300 hover:text-cyan-400 py-1.5">Contact Me</a>
+        <div class="pt-2 flex gap-2">
+          <button onclick="openResumeModal()" class="w-full py-2 rounded-xl bg-indigo-600 text-white text-xs font-semibold flex items-center justify-center gap-2">
+            <i class="fas fa-file-lines"></i> View Resume
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section id="hero" class="relative pt-28 sm:pt-36 pb-20 overflow-hidden bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Introduction & Pitch -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Availability Pulse Pill -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold tracking-wide">
+            <span class="pulse-dot"></span>
+            <span>Seeking Software Engineer Intern & AI Engineering Roles</span>
+          </div>
+
+          <!-- Name & Title Headline -->
+          <div class="space-y-2">
+            <h2 class="text-sm sm:text-base font-mono uppercase tracking-widest text-cyan-400 font-semibold">
+              Hello World, I'm
+            </h2>
+            <h1 class="text-4xl sm:text-6xl font-display font-extrabold tracking-tight text-white leading-tight">
+              Srishti Sangayya <br class="hidden sm:inline">
+              <span class="text-gradient">Malimath</span>
+            </h1>
+          </div>
+
+          <!-- Dynamic Typing Headline -->
+          <div class="h-14 sm:h-12 flex items-center justify-center lg:justify-start">
+            <div class="text-lg sm:text-2xl font-mono text-slate-300 font-medium">
+              <span class="text-indigo-400">&gt;</span> Engineering 
+              <span id="typewriter-text" class="text-cyan-300 font-semibold"></span>
+              <span class="cursor-blink"></span>
+            </div>
+          </div>
+
+          <!-- Narrative Bio -->
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+            AI & ML Engineering undergraduate at <strong>CMR Institute of Technology, Bengaluru</strong> (<strong>8.76 CGPA</strong>). Hands-on experience building autonomous AI agents, Model Context Protocol (MCP) integrations, tool-calling pipelines, computer vision systems, and robust backend microservices.
+          </p>
+
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+            <div class="glass-panel p-3 rounded-2xl text-center">
+              <div class="text-xl sm:text-2xl font-bold font-display text-cyan-400">8.76</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Degree CGPA</div>
+            </div>
+            <div class="glass-panel p-3 rounded-2xl text-center">
+              <div class="text-xl sm:text-2xl font-bold font-display text-purple-400">1 Patent</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Autocare (2025)</div>
+            </div>
+            <div class="glass-panel p-3 rounded-2xl text-center">
+              <div class="text-xl sm:text-2xl font-bold font-display text-emerald-400">&gt;80%</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Screening Cut</div>
+            </div>
+            <div class="glass-panel p-3 rounded-2xl text-center">
+              <div class="text-xl sm:text-2xl font-bold font-display text-indigo-400">OpenAI</div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Buildathon '25</div>
+            </div>
+          </div>
+
+          <!-- Action Buttons & Socials -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-3">
+            <a href="#projects" class="px-6 py-3 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 text-white font-semibold text-sm shadow-lg shadow-indigo-600/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2">
+              <i class="fas fa-layer-group"></i>
+              <span>Explore Projects</span>
+            </a>
+
+            <button onclick="openResumeModal()" class="px-5 py-3 rounded-2xl glass-panel text-slate-200 hover:text-white font-semibold text-sm hover:border-indigo-400/60 transition-all flex items-center gap-2 cursor-pointer">
+              <i class="fas fa-file-pdf text-red-400"></i>
+              <span>View Resume</span>
+            </button>
+
+            <a href="#contact" class="px-5 py-3 rounded-2xl bg-slate-800/80 hover:bg-slate-700/80 text-cyan-300 font-semibold text-sm transition-all flex items-center gap-2">
+              <i class="fas fa-envelope"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+
+          <!-- Direct Social Badges -->
+          <div class="flex items-center justify-center lg:justify-start gap-3 pt-2 text-slate-400">
+            <span class="text-xs font-mono uppercase tracking-wider text-slate-500 mr-2">Profiles:</span>
+            <a href="https://github.com/Srishti-2005" target="_blank" rel="noopener noreferrer" title="GitHub: Srishti-2005" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-white hover:border-cyan-400 transition-all">
+              <i class="fab fa-github text-lg"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/srishti-sangaya/" target="_blank" rel="noopener noreferrer" title="LinkedIn: srishti-sangaya" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-cyan-400 hover:border-cyan-400 transition-all">
+              <i class="fab fa-linkedin-in text-lg"></i>
+            </a>
+            <a href="https://leetcode.com/2005srushti/" target="_blank" rel="noopener noreferrer" title="LeetCode: 2005srushti" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-amber-400 hover:border-amber-400 transition-all">
+              <i class="fas fa-code text-lg"></i>
+            </a>
+            <a href="mailto:malimathsrushti@gmail.com" title="Email Srishti" class="w-10 h-10 rounded-xl glass-panel flex items-center justify-center hover:text-indigo-400 hover:border-indigo-400 transition-all">
+              <i class="fas fa-envelope text-lg"></i>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Profile Portrait Card with Dynamic Badges -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-sm">
+            
+            <!-- Glowing Framed Portrait -->
+            <div class="avatar-glow-frame">
+              <div class="w-full aspect-[4/5] rounded-[24px] overflow-hidden bg-slate-900 relative">
+                <img 
+                  src="assets/srishti.jpg" 
+                  alt="Srishti Sangayya Malimath — AI & ML Engineer" 
+                  class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
+                >
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent opacity-80"></div>
+                
+                <!-- Overlay Card Details -->
+                <div class="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-700/60">
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h4 class="text-white font-bold text-sm">Srishti S. Malimath</h4>
+                      <p class="text-cyan-400 text-xs font-mono">BE (AI & ML) • CMRIT</p>
+                    </div>
+                    <span class="px-2 py-1 rounded bg-indigo-500/20 text-indigo-300 font-mono text-[10px] font-semibold">
+                      Class of 2027
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Agentic AI -->
+            <div class="absolute -top-4 -left-4 glass-panel py-2 px-3.5 rounded-2xl shadow-xl flex items-center gap-2.5 animate-bounce" style="animation-duration: 4s;">
+              <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-xs">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-bold text-white leading-tight">MCP & Agents</div>
+                <div class="text-[9px] font-mono text-cyan-400">n8n • Make.com</div>
+              </div>
+            </div>
+
+            <!-- Floating Badge: Location -->
+            <div class="absolute -bottom-4 -right-4 glass-panel py-2 px-3.5 rounded-2xl shadow-xl flex items-center gap-2.5">
+              <div class="w-7 h-7 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xs">
+                <i class="fas fa-map-pin"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-bold text-white leading-tight">Bengaluru, IN</div>
+                <div class="text-[9px] font-mono text-emerald-400">Tech Capital</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive AI Agent Console Section ("Srishti AI Agent v1.0")
+       ========================================================================== -->
+  <section id="ai-terminal" class="py-16 relative">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono">
+          <i class="fas fa-terminal"></i>
+          <span>LIVE AGENTIC INTERACTIVE ENVIRONMENT</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">
+          Meet <span class="text-gradient">Srishti AI Agent v1.0</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          Experience an interactive agent simulated directly from Srishti's engineering profile, projects, and domain research. Ask a question or click a prompt!
+        </p>
+      </div>
+
+      <!-- Quick Preset Prompt Chips -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-4">
+        <button class="prompt-chip" data-topic="why_hire">
+          <i class="fas fa-bolt text-amber-400 mr-1"></i> Why hire Srishti?
+        </button>
+        <button class="prompt-chip" data-topic="agentic_mcp">
+          <i class="fas fa-network-wired text-cyan-400 mr-1"></i> Agentic & MCP Experience
+        </button>
+        <button class="prompt-chip" data-topic="elderly_care">
+          <i class="fas fa-heart-pulse text-rose-400 mr-1"></i> Elderly Care & Tremor AI
+        </button>
+        <button class="prompt-chip" data-topic="tech_stack">
+          <i class="fas fa-layer-group text-indigo-400 mr-1"></i> Technical Stack
+        </button>
+        <button class="prompt-chip" data-topic="patent_hackathons">
+          <i class="fas fa-trophy text-yellow-400 mr-1"></i> Patents & Buildathons
+        </button>
+        <button class="prompt-chip" data-topic="contact">
+          <i class="fas fa-paper-plane text-emerald-400 mr-1"></i> Contact Channels
+        </button>
+      </div>
+
+      <!-- Terminal Window -->
+      <div class="terminal-window">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+          <div class="flex items-center gap-2">
+            <span class="terminal-dot dot-red"></span>
+            <span class="terminal-dot dot-yellow"></span>
+            <span class="terminal-dot dot-green"></span>
+            <span class="text-xs font-mono text-slate-400 ml-2 hidden sm:inline">srishti-agentic-runtime — bash</span>
+          </div>
+          <div class="flex items-center gap-3 text-xs font-mono">
+            <span class="text-emerald-400 flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Status: Ready
+            </span>
+            <span class="text-slate-500 hidden sm:inline">Latency: ~24ms</span>
+          </div>
+        </div>
+
+        <!-- Terminal Body / Logs Window -->
+        <div id="terminal-logs" class="terminal-body space-y-3">
+          <div class="text-slate-400 text-xs font-mono">
+            <span class="text-cyan-400">sys.boot()</span> ➔ Srishti AI Agent runtime initialized successfully.<br>
+            Type a command or select a preset prompt above to query projects, capabilities, or candidate background.
+          </div>
+
+          <!-- Initial Agent Greeting -->
+          <div class="p-3.5 rounded-xl bg-slate-900/90 border border-indigo-500/30 text-sm shadow-md">
+            <div class="text-cyan-400 font-bold font-mono text-xs flex items-center justify-between border-b border-slate-700/60 pb-1.5 mb-2">
+              <span class="flex items-center gap-1.5"><i class="fas fa-sparkles text-indigo-400"></i> AI Agent Greeting</span>
+              <span class="text-[10px] text-slate-400 uppercase tracking-widest">Model: Agentic-v1.0</span>
+            </div>
+            <div class="text-slate-200 leading-relaxed font-sans text-xs sm:text-sm">
+              👋 Welcome! I am Srishti's personal AI Agent. I specialize in discussing her work on <strong>autonomous workflows</strong> (n8n, Make.com, Model Context Protocol), <strong>full-stack ML pipelines</strong>, and her <strong>Autocare patent</strong>. Click any topic above or ask anything below!
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Input Bar -->
+        <div class="p-3 bg-slate-950/90 border-t border-slate-800 flex items-center gap-2">
+          <span class="text-cyan-400 font-mono text-xs pl-2 font-bold">&gt;</span>
+          <input 
+            type="text" 
+            id="terminal-input" 
+            placeholder="Ask about Srishti's projects, MCP, backend stack, or type 'clear'..." 
+            class="flex-1 bg-transparent border-0 outline-none text-slate-200 text-xs sm:text-sm font-mono placeholder:text-slate-500"
+          >
+          <button id="terminal-send" class="px-3.5 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white font-mono text-xs font-semibold flex items-center gap-1.5 cursor-pointer transition-colors">
+            <span>Send</span>
+            <i class="fas fa-arrow-turn-down rotate-90 text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       About & Education Section
+       ========================================================================== -->
+  <section id="about" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Background & Foundations</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">
+          About <span class="text-gradient">Me</span>
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto rounded-full mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Narrative & Biography -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl space-y-4">
+            <h3 class="text-xl font-bold font-display text-white flex items-center gap-2.5">
+              <i class="fas fa-terminal text-cyan-400"></i>
+              Building the Future with Agentic & Intelligent Systems
+            </h3>
+            
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              I am an Artificial Intelligence & Machine Learning engineering student at <strong>CMR Institute of Technology, Bengaluru</strong>, maintaining an <strong>8.76 CGPA</strong>. My core passion lies at the intersection of <strong>autonomous agent architectures</strong>, <strong>semantic intelligence</strong>, and <strong>scalable software engineering</strong>.
+            </p>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Rather than treating LLMs as mere chat interfaces, I build <strong>agentic pipelines</strong> that execute deterministic tool calls, interface with external systems via <strong>Model Context Protocol (MCP)</strong>, process webhooks, and deliver quantifiable real-world value—such as cutting resume screening latency by >80% and diagnosing tremor frequencies in health tech.
+            </p>
+
+            <!-- Key Info List -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 border-t border-slate-700/60 font-mono text-xs">
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="fas fa-location-dot text-cyan-400 w-4"></i>
+                <span>AECS Layout, Bengaluru, Karnataka</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="fas fa-graduation-cap text-indigo-400 w-4"></i>
+                <span>BE (AI & ML) — Batch 2023–2027</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="fas fa-language text-purple-400 w-4"></i>
+                <span>English, Hindi, Kannada</span>
+              </div>
+              <div class="flex items-center gap-2 text-slate-300">
+                <i class="fas fa-award text-amber-400 w-4"></i>
+                <span>Patent Filed: Autocare (2025)</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Highlight Patent Banner -->
+          <div class="p-6 rounded-3xl patent-badge backdrop-blur-md relative overflow-hidden">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                <i class="fas fa-certificate"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-mono font-bold uppercase tracking-wider">
+                    Official Patent Filed
+                  </span>
+                  <span class="text-xs font-mono text-amber-400/80">Year: 2025</span>
+                </div>
+                <h4 class="text-lg font-bold text-white mt-1">
+                  Autocare: Integrated Automobile Service Provider Application
+                </h4>
+                <p class="text-xs text-amber-100/80 mt-1 leading-relaxed">
+                  Invented an integrated multi-tier platform connecting automobile owners, authorized service stations, roadside assistance units, and predictive maintenance diagnostics.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Education Timeline -->
+        <div class="lg:col-span-5 space-y-4">
+          <div class="glass-panel p-6 sm:p-7 rounded-3xl space-y-6">
+            <h3 class="text-lg font-bold font-display text-white flex items-center gap-2">
+              <i class="fas fa-graduation-cap text-indigo-400"></i>
+              Academic Journey
+            </h3>
+
+            <!-- Timeline items -->
+            <div class="relative border-l-2 border-indigo-500/30 pl-5 ml-2 space-y-6">
+              
+              <!-- College -->
+              <div class="relative group">
+                <span class="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full bg-cyan-400 border-2 border-slate-900 group-hover:scale-125 transition-transform"></span>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-cyan-400 font-semibold">2023 — 2027 (Pursuing)</span>
+                  <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300 text-[11px] font-bold font-mono">8.76 CGPA</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">Bachelor of Engineering</h4>
+                <p class="text-xs text-indigo-300 font-medium">Artificial Intelligence & Machine Learning</p>
+                <p class="text-xs text-slate-400 mt-1">CMR Institute of Technology, AECS Layout, Bengaluru</p>
+              </div>
+
+              <!-- PU College -->
+              <div class="relative group">
+                <span class="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full bg-indigo-400 border-2 border-slate-900 group-hover:scale-125 transition-transform"></span>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-indigo-400 font-semibold">2021 — 2023</span>
+                  <span class="px-2 py-0.5 rounded bg-indigo-500/10 text-indigo-300 text-[11px] font-bold font-mono">95.66%</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">Pre-University Course (Science)</h4>
+                <p class="text-xs text-slate-400 mt-1">Morarji Desai Residential PU College, Mennabettu</p>
+              </div>
+
+              <!-- School -->
+              <div class="relative group">
+                <span class="absolute -left-[27px] top-1.5 w-3.5 h-3.5 rounded-full bg-purple-400 border-2 border-slate-900 group-hover:scale-125 transition-transform"></span>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-mono text-purple-400 font-semibold">2021</span>
+                  <span class="px-2 py-0.5 rounded bg-purple-500/10 text-purple-300 text-[11px] font-bold font-mono">92.8%</span>
+                </div>
+                <h4 class="text-base font-bold text-white mt-1">SSLC (Secondary School)</h4>
+                <p class="text-xs text-slate-400 mt-1">Morarji Desai Residential School, Kuttinhopadavu</p>
+              </div>
+
+            </div>
+
+            <!-- Certifications highlight -->
+            <div class="pt-4 border-t border-slate-800">
+              <h4 class="text-xs font-mono text-slate-400 uppercase tracking-wider mb-2.5">
+                NxtWave CCBP Certifications
+              </h4>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="skill-badge text-[11px]"><i class="fas fa-check text-emerald-400"></i> Responsive Websites</span>
+                <span class="skill-badge text-[11px]"><i class="fas fa-check text-emerald-400"></i> Databases & SQL</span>
+                <span class="skill-badge text-[11px]"><i class="fas fa-check text-emerald-400"></i> Static Web Systems</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Technical Skills Matrix Section
+       ========================================================================== -->
+  <section id="skills" class="py-20 relative bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Tooling & Engineering Proficiencies</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">
+          Technical <span class="text-gradient">Stack</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          Built for agentic workflows, deterministic tool integration, high-performance backends, and applied computer vision.
+        </p>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto rounded-full mt-2"></div>
+      </div>
+
+      <!-- Skills Grid (4 Categories) -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Category 1: AI Agents & LLMs -->
+        <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-cyan-400/50 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+            <i class="fas fa-brain"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white font-display">AI Agents & LLMs</h3>
+            <p class="text-xs text-slate-400 mt-1">Autonomous orchestration & prompt pipelines</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="skill-badge text-cyan-300 font-mono">Model Context Protocol (MCP)</span>
+            <span class="skill-badge text-cyan-300 font-mono">Tool / Function Calling</span>
+            <span class="skill-badge">Structured JSON Outputs</span>
+            <span class="skill-badge">Prompt Chaining</span>
+            <span class="skill-badge">n8n Orchestration</span>
+            <span class="skill-badge">Make.com Automation</span>
+            <span class="skill-badge">Failure Handling & Retries</span>
+          </div>
+        </div>
+
+        <!-- Category 2: Programming & Backend -->
+        <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-indigo-400/50 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-xl">
+            <i class="fas fa-code"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white font-display">Languages & Backend</h3>
+            <p class="text-xs text-slate-400 mt-1">Robust system programming & web services</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="skill-badge text-indigo-300 font-mono">Python</span>
+            <span class="skill-badge font-mono">JavaScript (Node/Express)</span>
+            <span class="skill-badge font-mono">Go (Basics)</span>
+            <span class="skill-badge font-mono">Java</span>
+            <span class="skill-badge font-mono">C</span>
+            <span class="skill-badge">Flask Framework</span>
+            <span class="skill-badge">OOPs & Clean Design</span>
+            <span class="skill-badge">Data Structures & Algorithms</span>
+            <span class="skill-badge">Bash Scripting</span>
+          </div>
+        </div>
+
+        <!-- Category 3: APIs, Databases & Search -->
+        <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-emerald-400/50 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+            <i class="fas fa-database"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white font-display">Data & Semantic Search</h3>
+            <p class="text-xs text-slate-400 mt-1">Structured storage & vector retrieval</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="skill-badge text-emerald-300 font-mono">Embeddings & Semantic Search</span>
+            <span class="skill-badge">RESTful Web Services</span>
+            <span class="skill-badge">Webhooks Architecture</span>
+            <span class="skill-badge">MySQL</span>
+            <span class="skill-badge">SQLite</span>
+            <span class="skill-badge">MongoDB</span>
+            <span class="skill-badge">Redis / Message Queues</span>
+            <span class="skill-badge">JSON Schema</span>
+          </div>
+        </div>
+
+        <!-- Category 4: Computer Vision & ML -->
+        <div class="glass-panel p-6 rounded-3xl space-y-4 hover:border-purple-400/50 transition-all">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-xl">
+            <i class="fas fa-eye"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white font-display">CV & Machine Learning</h3>
+            <p class="text-xs text-slate-400 mt-1">Real-time perception & signal analytics</p>
+          </div>
+          <div class="flex flex-wrap gap-2 pt-2">
+            <span class="skill-badge text-purple-300 font-mono">MediaPipe Vision</span>
+            <span class="skill-badge text-purple-300 font-mono">Pose & Hand Tracking</span>
+            <span class="skill-badge font-mono">Fast Fourier Transform (FFT)</span>
+            <span class="skill-badge">Scikit-learn</span>
+            <span class="skill-badge">Balanced Logistic Regression</span>
+            <span class="skill-badge">Class Imbalance Handling</span>
+            <span class="skill-badge">Feature Engineering</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Featured Projects Section
+       ========================================================================== -->
+  <section id="projects" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-10">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Engineered Systems & Real-World Deployments</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">
+          Featured <span class="text-gradient">Projects</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          Explore production-grade agentic workflows, computer vision diagnostics, and predictive ML systems.
+        </p>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto rounded-full mt-2"></div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+        <button class="filter-btn active px-4 py-2 rounded-xl glass-panel text-xs sm:text-sm font-semibold transition-all cursor-pointer" data-filter="all">
+          All Projects (4)
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl glass-panel text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all cursor-pointer" data-filter="agents">
+          <i class="fas fa-robot text-cyan-400 mr-1.5"></i> AI Agents & MCP
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl glass-panel text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all cursor-pointer" data-filter="cv">
+          <i class="fas fa-heart-pulse text-rose-400 mr-1.5"></i> Computer Vision & Health
+        </button>
+        <button class="filter-btn px-4 py-2 rounded-xl glass-panel text-xs sm:text-sm font-semibold text-slate-300 hover:text-white transition-all cursor-pointer" data-filter="ml">
+          <i class="fas fa-chart-line text-emerald-400 mr-1.5"></i> Predictive ML & Analytics
+        </button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project 1: Resume Checker Agent -->
+        <div class="project-card glass-panel p-6 sm:p-8 space-y-5 flex flex-col justify-between" data-category="agents">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold">
+                Autonomous AI Agent
+              </span>
+              <span class="text-xs font-mono text-emerald-400 font-bold">&gt;80% Time Saved</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white font-display">Resume Checker Agent</h3>
+            <p class="text-indigo-300 text-xs font-mono">Make.com • Python • REST APIs • Webhooks • Prompt Chaining</p>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Built an automated AI agent pipeline that receives resumes via webhook triggers, extracts structured JSON candidate profiles with schema validation, and scores role compatibility automatically.
+            </p>
+
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-1">
+              <div class="text-slate-300 font-semibold"><i class="fas fa-check-circle text-cyan-400 mr-1"></i> Core Innovation:</div>
+              Implemented multi-step prompt chaining with API retry and failure handling to automate end-to-end evaluation without human intervention.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Python</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Make.com</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Structured JSON</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Webhooks</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <button onclick="openProjectModal('resume_checker')" class="text-cyan-400 hover:text-cyan-300 text-xs font-semibold flex items-center gap-1.5 cursor-pointer">
+              <span>View System Architecture</span>
+              <i class="fas fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://github.com/Srishti-2005" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2: AI-Powered Social Media Automation -->
+        <div class="project-card glass-panel p-6 sm:p-8 space-y-5 flex flex-col justify-between" data-category="agents">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 text-xs font-mono font-semibold">
+                Agentic Workflow Orchestrator
+              </span>
+              <span class="text-xs font-mono text-cyan-400 font-bold">Multi-Platform</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white font-display">AI-Powered Social Media Automation</h3>
+            <p class="text-indigo-300 text-xs font-mono">n8n • Generative AI APIs • REST APIs • OAuth 2.0</p>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Engineered multi-step agentic workflows using n8n and Generative AI APIs to generate, format, review, and automatically publish synchronized content across professional networks (LinkedIn & X).
+            </p>
+
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-1">
+              <div class="text-slate-300 font-semibold"><i class="fas fa-check-circle text-indigo-400 mr-1"></i> Core Innovation:</div>
+              Implemented OAuth authentication lifecycle management, webhook queues, and resilient fallback handling across scheduled execution pipelines.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">n8n</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">GenAI APIs</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">OAuth 2.0</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">REST Webhooks</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <button onclick="openProjectModal('social_media')" class="text-cyan-400 hover:text-cyan-300 text-xs font-semibold flex items-center gap-1.5 cursor-pointer">
+              <span>View System Architecture</span>
+              <i class="fas fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://github.com/Srishti-2005" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: Elderly Care & Neurodegenerative Disorder AI -->
+        <div class="project-card glass-panel p-6 sm:p-8 space-y-5 flex flex-col justify-between" data-category="cv">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-mono font-semibold">
+                Health Tech & Computer Vision
+              </span>
+              <span class="text-xs font-mono text-purple-400 font-bold">Real-Time FFT</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white font-display">Elderly Care & Tremor Detection AI</h3>
+            <p class="text-indigo-300 text-xs font-mono">Python • MediaPipe • FFT • Pose Estimation • Express.js • SQLite</p>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Integrated real-time MediaPipe hand and body landmark tracking with Fast Fourier Transform (FFT) signal analysis to detect, quantify, and monitor tremors and gait symmetry in elderly individuals.
+            </p>
+
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-1">
+              <div class="text-slate-300 font-semibold"><i class="fas fa-check-circle text-rose-400 mr-1"></i> Core Innovation:</div>
+              Created modular screening pipelines for finger tapping frequency, postural sway, joint angle mechanics, and cognitive motor coordination.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">MediaPipe</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">FFT Analysis</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Express.js</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">SQLite</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <button onclick="openProjectModal('elderly_care')" class="text-cyan-400 hover:text-cyan-300 text-xs font-semibold flex items-center gap-1.5 cursor-pointer">
+              <span>View System Architecture</span>
+              <i class="fas fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://github.com/Srishti-2005" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Employee Attrition Prediction -->
+        <div class="project-card glass-panel p-6 sm:p-8 space-y-5 flex flex-col justify-between" data-category="ml">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono font-semibold">
+                Machine Learning & Analytics
+              </span>
+              <span class="text-xs font-mono text-amber-400 font-bold">Imbalance Resolved</span>
+            </div>
+
+            <h3 class="text-2xl font-bold text-white font-display">Employee Attrition Prediction System</h3>
+            <p class="text-indigo-300 text-xs font-mono">Python • Scikit-learn • Balanced Logistic Regression • Flask</p>
+
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Engineered an end-to-end ML decision support pipeline with Balanced Logistic Regression (<code class="text-xs">class_weight='balanced'</code>) resolving severe dataset class imbalance in churn prediction.
+            </p>
+
+            <div class="p-3 bg-slate-950/60 rounded-xl border border-slate-800 text-xs text-slate-400 space-y-1">
+              <div class="text-slate-300 font-semibold"><i class="fas fa-check-circle text-emerald-400 mr-1"></i> Core Innovation:</div>
+              Built an interactive Flask executive dashboard with single-employee risk scoring, bulk CSV batch inference, and automated HR retention prescriptions.
+            </div>
+
+            <div class="flex flex-wrap gap-1.5 pt-2">
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Scikit-learn</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Flask Dashboard</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Risk Scoring</span>
+              <span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-mono">Batch CSV</span>
+            </div>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800 flex items-center justify-between">
+            <button onclick="openProjectModal('employee_attrition')" class="text-cyan-400 hover:text-cyan-300 text-xs font-semibold flex items-center gap-1.5 cursor-pointer">
+              <span>View System Architecture</span>
+              <i class="fas fa-arrow-right text-[10px]"></i>
+            </button>
+            <a href="https://github.com/Srishti-2005" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition-colors">
+              <i class="fab fa-github text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Patents, Hackathons & Community Leadership Section
+       ========================================================================== -->
+  <section id="patents-achievements" class="py-20 relative bg-grid-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Leadership, Innovation & Community</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">
+          Achievements & <span class="text-gradient">Milestones</span>
+        </h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto rounded-full mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Column 1: Hackathons & Buildathons -->
+        <div class="glass-panel p-6 rounded-3xl space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl">
+            <i class="fas fa-fire"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Hackathons & Sprints</h3>
+
+          <div class="space-y-4 text-xs">
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-amber-300">Gen AI Buildathon</span>
+                <span class="font-mono text-slate-500">Aug 2025</span>
+              </div>
+              <p class="text-slate-300">OpenAI Academy Learning Community — competitive agentic software build sprint.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white">Smart India Hackathon</span>
+                <span class="font-mono text-slate-500">2025</span>
+              </div>
+              <p class="text-slate-300">College Level Selection & National Problem Solving.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white">Torvalds Club Hackathon</span>
+                <span class="font-mono text-slate-500">2025</span>
+              </div>
+              <p class="text-slate-300">CMRIT Technical Club Sprint on system software.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Advanced Workshops -->
+        <div class="glass-panel p-6 rounded-3xl space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-xl">
+            <i class="fas fa-chalkboard-user"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Specialized Workshops</h3>
+
+          <div class="space-y-4 text-xs">
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-cyan-300">Model Context Protocol (MCP)</span>
+                <span class="font-mono text-slate-500">2025</span>
+              </div>
+              <p class="text-slate-300">NxtWave CCBP 4.0 Academy — LLM tool integration standards & contextual APIs.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white">AI Workflows & Automation (Make)</span>
+                <span class="font-mono text-slate-500">2025</span>
+              </div>
+              <p class="text-slate-300">NxtWave CCBP 4.0 Academy — Complex trigger-action loops and webhook integration.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-indigo-300">ISRO-START Workshop</span>
+                <span class="font-mono text-slate-500">2026</span>
+              </div>
+              <p class="text-slate-300">IIRS, ISRO Dehradun — Capacity Building in Remote Sensing & Space Science.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 3: Community & Social Impact -->
+        <div class="glass-panel p-6 rounded-3xl space-y-5">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl">
+            <i class="fas fa-hand-holding-heart"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white font-display">Community & Leadership</h3>
+
+          <div class="space-y-4 text-xs">
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-emerald-300">National Service Scheme (NSS)</span>
+                <span class="font-mono text-slate-500">2025–2026</span>
+              </div>
+              <p class="text-slate-300">Active Volunteer: Taught Basics of AI & computer literacy to rural students in government school near Sarjapur.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-white">Tech Debate & Quiz Organizer</span>
+                <span class="font-mono text-slate-500">2025</span>
+              </div>
+              <p class="text-slate-300">Rare Club CMRIT: Curated questions and organized debate on emerging AI technologies.</p>
+            </div>
+
+            <div class="p-3.5 bg-slate-900/60 rounded-2xl border border-slate-800 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-purple-300">ISRO & NASA Industrial Visits</span>
+                <span class="font-mono text-slate-500">2025–2026</span>
+              </div>
+              <p class="text-slate-300">Gained direct insights into satellite telemetry, aerospace missions, and research initiatives.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Contact & Connect Section
+       ========================================================================== -->
+  <section id="contact" class="py-20 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center space-y-2 mb-16">
+        <span class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Let's Build Together</span>
+        <h2 class="text-3xl sm:text-5xl font-display font-bold text-white">
+          Get in <span class="text-gradient">Touch</span>
+        </h2>
+        <p class="text-slate-400 text-sm sm:text-base max-w-xl mx-auto">
+          Currently open to Software Engineer Intern (AI Products), production agentic pipelines, and research roles. Let's discuss how I can contribute!
+        </p>
+        <div class="w-16 h-1 bg-gradient-to-r from-cyan-400 to-indigo-600 mx-auto rounded-full mt-2"></div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- Left: Direct Communication Cards -->
+        <div class="lg:col-span-5 space-y-4">
+          
+          <!-- Email Card with 1-click copy -->
+          <div class="glass-panel p-5 rounded-3xl flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Primary Email</div>
+                <a href="mailto:malimathsrushti@gmail.com" class="text-white font-medium text-sm group-hover:text-cyan-400 transition-colors">
+                  malimathsrushti@gmail.com
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('malimathsrushti@gmail.com', 'Primary Email')" title="Copy Email" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs cursor-pointer transition-colors">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Academic Email -->
+          <div class="glass-panel p-5 rounded-3xl flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-2xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg">
+                <i class="fas fa-university"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Institutional Email</div>
+                <a href="mailto:srma23aiml@cmrit.ac.in" class="text-white font-medium text-sm group-hover:text-indigo-400 transition-colors">
+                  srma23aiml@cmrit.ac.in
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('srma23aiml@cmrit.ac.in', 'Institutional Email')" title="Copy Email" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs cursor-pointer transition-colors">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Phone Card -->
+          <div class="glass-panel p-5 rounded-3xl flex items-center justify-between group">
+            <div class="flex items-center gap-3.5">
+              <div class="w-11 h-11 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-lg">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div>
+                <div class="text-[11px] font-mono text-slate-400 uppercase">Phone & WhatsApp</div>
+                <a href="tel:+918431270997" class="text-white font-medium text-sm group-hover:text-emerald-400 transition-colors">
+                  +91 8431270997
+                </a>
+              </div>
+            </div>
+            <button onclick="copyToClipboard('+918431270997', 'Phone Number')" title="Copy Phone" class="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs cursor-pointer transition-colors">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+
+          <!-- Location Card -->
+          <div class="glass-panel p-5 rounded-3xl flex items-center gap-3.5">
+            <div class="w-11 h-11 rounded-2xl bg-purple-500/10 text-purple-400 flex items-center justify-center text-lg">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div>
+              <div class="text-[11px] font-mono text-slate-400 uppercase">Location</div>
+              <div class="text-white font-medium text-sm">
+                Shiva Sai Ladies PG, AECS Layout, Bengaluru 560037
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Quick Links Bar -->
+          <div class="p-5 glass-panel rounded-3xl flex items-center justify-between">
+            <span class="text-xs font-mono text-slate-400">Connect Online:</span>
+            <div class="flex items-center gap-3">
+              <a href="https://github.com/Srishti-2005" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-200 hover:text-cyan-400 transition-colors">
+                <i class="fab fa-github text-base"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/srishti-sangaya/" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-200 hover:text-indigo-400 transition-colors">
+                <i class="fab fa-linkedin-in text-base"></i>
+              </a>
+              <a href="https://leetcode.com/2005srushti/" target="_blank" class="w-9 h-9 rounded-xl bg-slate-800 hover:bg-slate-700 flex items-center justify-center text-slate-200 hover:text-amber-400 transition-colors">
+                <i class="fas fa-code text-base"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Contact Form -->
+        <div class="lg:col-span-7">
+          <div class="glass-panel p-6 sm:p-8 rounded-3xl">
+            <h3 class="text-xl font-bold font-display text-white mb-2">Send a Direct Message</h3>
+            <p class="text-xs sm:text-sm text-slate-400 mb-6">
+              Recruiting, consulting, or project inquiries? Fill out the form below and I'll get back to you promptly.
+            </p>
+
+            <form id="contact-form" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5" for="form-name">Your Name *</label>
+                  <input 
+                    type="text" 
+                    id="form-name" 
+                    required 
+                    placeholder="e.g. Alex Johnson"
+                    class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm outline-none focus:border-cyan-400 transition-colors"
+                  >
+                </div>
+                <div>
+                  <label class="block text-xs font-mono text-slate-300 mb-1.5" for="form-email">Your Email *</label>
+                  <input 
+                    type="email" 
+                    id="form-email" 
+                    required 
+                    placeholder="alex@company.com"
+                    class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm outline-none focus:border-cyan-400 transition-colors"
+                  >
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-mono text-slate-300 mb-1.5" for="form-subject">Subject *</label>
+                <input 
+                  type="text" 
+                  id="form-subject" 
+                  required 
+                  placeholder="Software Engineer Intern (AI Products) / Project Collaboration"
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm outline-none focus:border-cyan-400 transition-colors"
+                >
+              </div>
+
+              <div>
+                <div class="flex items-center justify-between mb-1.5">
+                  <label class="block text-xs font-mono text-slate-300" for="form-message">Message *</label>
+                  <span id="char-counter" class="text-[11px] font-mono text-slate-500">0/500</span>
+                </div>
+                <textarea 
+                  id="form-message" 
+                  rows="4" 
+                  maxlength="500" 
+                  required 
+                  placeholder="Share details about the role, project vision, or timeline..."
+                  class="w-full px-4 py-2.5 rounded-xl bg-slate-900/80 border border-slate-700/80 text-white text-sm outline-none focus:border-cyan-400 transition-colors"
+                ></textarea>
+              </div>
+
+              <div class="flex items-center justify-between pt-2">
+                <span class="text-xs text-slate-500 flex items-center gap-1.5">
+                  <i class="fas fa-shield-halved text-cyan-500"></i> Direct & Spam-Protected
+                </span>
+
+                <button 
+                  type="submit" 
+                  class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-semibold text-xs tracking-wide shadow-lg shadow-indigo-600/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer"
+                >
+                  <i class="fas fa-paper-plane"></i>
+                  <span>Send Message</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="border-t border-slate-800/80 py-10 relative bg-slate-950/70">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center text-white font-bold font-display text-sm">
+          SM
+        </div>
+        <span class="text-sm font-semibold text-slate-300">Srishti Sangayya Malimath</span>
+        <span class="text-xs font-mono text-slate-500">© 2026. Built with precision & code.</span>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-mono text-slate-400">
+        <a href="#hero" class="hover:text-cyan-400 transition-colors">Back to Top</a>
+        <span>•</span>
+        <a href="https://github.com/Srishti-2005" target="_blank" class="hover:text-cyan-400 transition-colors">GitHub</a>
+        <span>•</span>
+        <a href="https://www.linkedin.com/in/srishti-sangaya/" target="_blank" class="hover:text-cyan-400 transition-colors">LinkedIn</a>
+        <span>•</span>
+        <a href="https://leetcode.com/2005srushti/" target="_blank" class="hover:text-cyan-400 transition-colors">LeetCode</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top" class="w-11 h-11 rounded-2xl glass-panel text-cyan-400 hover:text-white hover:border-cyan-400/60 shadow-xl flex items-center justify-center opacity-0 pointer-events-none transition-all cursor-pointer">
+    <i class="fas fa-chevron-up text-sm"></i>
+  </button>
+
+  <!-- ==========================================================================
+       Project Deep Dive Case Study Modal
+       ========================================================================== -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-content p-6 sm:p-8 relative">
+      <button id="modal-close-btn" aria-label="Close Modal" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition-colors cursor-pointer">
+        <i class="fas fa-xmark text-sm"></i>
+      </button>
+      <div id="modal-details-container">
+        <!-- Injected dynamically via script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Resume Preview & Download Modal
+       ========================================================================== -->
+  <div id="resume-modal" class="modal-backdrop">
+    <div class="modal-content max-w-4xl p-6 sm:p-7 relative space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-lg">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-white font-display">Resume — Srishti Sangayya Malimath</h3>
+            <p class="text-xs font-mono text-cyan-400">BE (AI & ML) • 8.76 CGPA • Batch 2027</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-2">
+          <a href="assets/Srishti_Sangayya_Malimath_Resume.pdf" download="Srishti_Sangayya_Malimath_Resume.pdf" class="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-medium text-xs flex items-center gap-1.5 transition-colors">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+          <button onclick="closeResumeModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center cursor-pointer">
+            <i class="fas fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Embedded PDF Viewer -->
+      <div class="w-full h-[65vh] rounded-2xl overflow-hidden bg-slate-950 border border-slate-800">
+        <iframe 
+          src="assets/Srishti_Sangayya_Malimath_Resume.pdf#toolbar=1" 
+          class="w-full h-full border-0"
+          title="Srishti Sangayya Malimath Resume PDF"
+        >
+          <div class="p-8 text-center text-slate-400 text-sm">
+            PDF preview is not supported by your current browser viewer.<br>
+            <a href="assets/Srishti_Sangayya_Malimath_Resume.pdf" download class="text-cyan-400 underline mt-2 inline-block">Click here to download the PDF</a>
+          </div>
+        </iframe>
+      </div>
+
+      <div class="flex items-center justify-between text-xs text-slate-400 pt-1">
+        <span>Official verified resume document</span>
+        <a href="assets/Srishti_Sangayya_Malimath_Resume.pdf" target="_blank" class="text-cyan-400 hover:underline flex items-center gap-1">
+          <span>Open in new tab</span>
+          <i class="fas fa-arrow-up-right-from-square text-[10px]"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Engine -->
+  <script src="assets/script.js"></script>
+
+  <!-- Mobile Hamburger Toggle Script inline helper -->
+  <script>
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileBtn && mobileMenu) {
+      mobileBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('hidden');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
